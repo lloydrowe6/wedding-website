@@ -1,64 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
     <title>Future Rowe's</title>
     <style>
-        .tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-        <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-</div>
-
-<!-- Tab content -->
-<div id="Test1" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Test2" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p>
-</div>
-
-<div id="Test3" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
         body {
             text-align: center;
             background-color: #fdfbf7;
@@ -66,11 +10,84 @@
             margin: 0;
             padding: 40px;
         }
+
+        /* Wrapper for the tabs */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        /* Hide the actual radio circles */
+        .tabs input[type="radio"] {
+            display: none;
+        }
+
+        /* Style the labels to look like your buttons */
+        .tabs label {
+            padding: 14px 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            background-color: inherit;
+        }
+
+        .tabs label:hover {
+            background-color: #ddd;
+        }
+
+        /* Highlight the active tab label */
+        .tabs input[type="radio"]:checked + label {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content (spans full width below the buttons) */
+        .tabcontent {
+            order: 1;
+            width: 100%;
+            display: none;
+            padding: 6px 12px;
+            border-top: 1px solid #ccc;
+            background-color: #fdfbf7;
+        }
+
+        /* Show the content immediately following a checked radio + label */
+        .tabs input[type="radio"]:checked + label + .tabcontent {
+            display: block;
+        }
     </style>
 </head>
 <body>
+
+    <div class="tabs">
+        <!-- Tab 1 -->
+        <input type="radio" name="citytabs" id="tab1" checked>
+        <label for="tab1">London</label>
+        <div class="tabcontent">
+            <h3>London</h3>
+            <p>London is the capital city of England.</p>
+        </div>
+
+        <!-- Tab 2 -->
+        <input type="radio" name="citytabs" id="tab2">
+        <label for="tab2">Paris</label>
+        <div class="tabcontent">
+            <h3>Paris</h3>
+            <p>Paris is the capital of France.</p>
+        </div>
+
+        <!-- Tab 3 -->
+        <input type="radio" name="citytabs" id="tab3">
+        <label for="tab3">Tokyo</label>
+        <div class="tabcontent">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+    </div>
+
     <h1>Future Rowe's Wedding</h1>
     <p>Coming Soon!</p>
     <img src="wedding.jpg" alt="Our Wedding Photo" style="max-width: 100%; height: auto; border-radius: 8px;">
+
 </body>
 </html>
